@@ -31,7 +31,19 @@ token_player_2 = token_player_1 == "X" ?
   "O" : "X"
 puts "#{name_player_1} your token is: #{token_player_1}. #{name_player_2} your token is: #{token_player_2}"
 
-# Check that position chose by the player is between 1 and 9 and is an empty one. This is what cosntitutes a valid move.
+# Run each instance of the game until either there is a winner or all positions are taken
+while i < 9
+  if i.even? 
+    player = name_player_1
+    token = token_player_1
+  elsif
+    player = name_player_2
+    token = token_player_2
+  end
+  puts "#{player} it's your move. Enter the number of the position where you wish to place your token."
+  move = (gets.chomp.to_i) - 1
+
+# Check that position chosen by the player is between 1 and 9 and is an empty one. This is what cosntitutes a valid move.
   if move > 8 || move < 0
     puts "That position is not on the board. Select again."
     move = (gets.chomp.to_i) -1

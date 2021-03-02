@@ -31,6 +31,10 @@ token_player_2 = token_player_1 == "X" ?
   "O" : "X"
 puts "#{name_player_1} your token is: #{token_player_1}. #{name_player_2} your token is: #{token_player_2}"
 
+no_further = false
+until no_further
+  board =["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+  i = 0 
 # Run each instance of the game until either there is a winner or all positions are taken
 while i < 9
   if i.even? 
@@ -89,3 +93,14 @@ while i < 9
     winner = player
     puts "The winner is #{player}"
     i = 9
+  end
+
+  # Players are asked if they'd like to play another round or end the game. The game ends or re-starts accordingly.
+    puts "Do you wish to play another round? Y / N"
+    willing = gets.chomp
+    if willing == "N"
+      no_further = true
+      puts "Game over!"
+    end
+  end
+  

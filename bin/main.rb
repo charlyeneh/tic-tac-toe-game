@@ -31,4 +31,13 @@ token_player_2 = token_player_1 == "X" ?
   "O" : "X"
 puts "#{name_player_1} your token is: #{token_player_1}. #{name_player_2} your token is: #{token_player_2}"
 
-
+# Check that position chose by the player is between 1 and 9 and is an empty one. This is what cosntitutes a valid move.
+  if move > 8 || move < 0
+    puts "That position is not on the board. Select again."
+    move = (gets.chomp.to_i) -1
+  end
+  if board[move] == "O" || board[move] == "X"
+    puts "That position is already occupied. Select from among the empty positions."
+    move = (gets.chomp.to_i) -1
+  end
+  board[move] = token

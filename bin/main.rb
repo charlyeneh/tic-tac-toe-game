@@ -53,3 +53,39 @@ while i < 9
     move = (gets.chomp.to_i) -1
   end
   board[move] = token
+
+  # The updated tic-tac-toe board is displayed with the tokens displayed on their assigned positions.
+  p board
+ # At every turn the set of positions already taken is compared to the sets of winning combinations.
+  if board[0] == board[1] && board[1] == board[2]
+    winner = player
+    puts "The winner is #{player}"
+    i = 9
+  elsif board[3]== board[4] && board[4]== board[5]
+    winner = player
+    puts "The winner is #{player}"
+    i = 9
+  elsif board[6] == board[7] && board[7]== board[8]
+    winner = player
+    puts "The winner is #{player}"
+    i = 9
+  elsif board[0] == board[3] && board[3] == board[6]
+    winner = player
+    puts "The winner is #{player}"
+    i = 9
+  elsif board[1] == board[4] && board[4] == board[7]
+    winner = player
+    puts "The winner is #{player}"
+    i = 9
+  elsif board[2] == board[5] && board[5] == board[8]
+    winner = player
+    puts "The winner is #{player}"
+    i = 9
+  elsif board[0] == board[4] && board[4] == board[8]
+    winner = player
+    puts "The winner is #{player}"
+    i = 9
+  elsif board[2] == board[4] && board[4] == board[6]
+    winner = player
+    puts "The winner is #{player}"
+    i = 9

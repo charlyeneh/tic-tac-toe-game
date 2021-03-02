@@ -93,6 +93,12 @@ while i < 9
     winner = player
     puts "The winner is #{player}"
     i = 9
+  
+  # If all positions on the board are already taken a draw is declared
+  elsif i == 8
+    puts "It\'s a tie!"
+  end
+  i += 1
   end
 
   # Players are asked if they'd like to play another round or end the game. The game ends or re-starts accordingly.

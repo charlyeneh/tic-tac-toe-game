@@ -12,10 +12,10 @@ puts '+-----------+'
 puts 'Welcome to TIC-TAC-TOE!'
 # Obtain input from players. This could be their name but it can also be their chosen token
 puts 'Player 1 enter your name.'
-name_player_1 = gets.chomp
+name_player1 = gets.chomp
 puts 'Player 2 enter your name'
-name_player_2 = gets.chomp
-puts '#{name_player_1}, choose your token: either O or X'
+name_player2 = gets.chomp
+puts "#{name_player1}, choose your token: either O or X"
 token_player1 = gets.strip.upcase
 
 # Check to see that player 1 chooses either X or O as their token and nothing other
@@ -23,17 +23,16 @@ until %w[X O].include?(token_player1)
   puts 'That is not a valid token. Choose either O or X'
   token_player1 = gets.strip.upcase
   if token_player1 != 'X' && token_player1 != 'O'
-    puts 'Ok #{name_player1}, you get assigned X'
+    puts "Ok #{name_player1}, you get assigned X"
     token_player1 = 'X'
   end
 end
-token_player2 = token_player1 == 'X' ?
-  'O' : 'X'
+token_player2 = token_player1 == 'X' ? 'O' : 'X'
 puts "#{name_player1} your token is: #{token_player1}. #{name_player2} your token is: #{token_player2}"
 
 no_further = false
 until no_further
-  board = %w['1', '2', '3', '4', '5', '6', '7', '8', '9']
+  board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
   i = 0
   # Run each instance of the game until either there is a winner or all positions are taken
   while i < 9
@@ -44,7 +43,7 @@ until no_further
       (player = name_player2)
       token = token_player2
     end
-    puts '#{player} its your move. Enter the number of   the position where you wish to place your token.'
+    puts "#{player} its your move. Enter the number of   the position where you wish to place your token."
     move = gets.chomp.to_i - 1
 
     # Check that position chosen by the player is between 1 and 9 and is an empty one.

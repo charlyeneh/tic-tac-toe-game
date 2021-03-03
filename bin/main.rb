@@ -1,20 +1,15 @@
-# The tic-tac-toe board is displayed
-
-puts '+-----------+'
-puts '| 1 | 2 | 3 |'
-puts '+-----------+'
-puts '| 4 | 5 | 6 |'
-puts '+-----------+'
-puts '| 7 | 8 | 9 |'
-puts '+-----------+'
-
-# A welcome message is displayed so as to inform players that the game is on. Instructions follow.
+# A welcome message is displayed.
 puts 'Welcome to TIC-TAC-TOE!'
-# Obtain input from players. This could be their name but it can also be their chosen token
+
+# Obtain input from players. 
 puts 'Player 1 enter your name.'
 name_player1 = gets.chomp
 puts 'Player 2 enter your name'
 name_player2 = gets.chomp
+
+puts "Hi #{name_player1} and #{name_player2} welcome to Tic Tac Toe game"
+
+#Ask both players to choose their symbols(X or 0)
 puts "#{name_player1}, choose your token: either O or X"
 token_player1 = gets.strip.upcase
 
@@ -34,6 +29,7 @@ no_further = false
 until no_further
   board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
   i = 0
+
   # Run each instance of the game until either there is a winner or all positions are taken
   while i < 9
     if i.even?
@@ -46,51 +42,55 @@ until no_further
     puts "#{player} its your move. Enter the number of   the position where you wish to place your token."
     move = gets.chomp.to_i - 1
 
-    # Check that position chosen by the player is between 1 and 9 and is an empty one.
-    # This is what cosntitutes a valid move.
-    if move > 8 || move.negative?
-      puts 'That position is not on the board. Select   again.'
-      move = gets.chomp.to_i - 1
-    end
-    if board[move] == 'O' || board[move] == 'X'
-      puts 'That position is already occupied. Select from  among the empty positions.'
-      move = gets.chomp.to_i - 1
-    end
-    board[move] = token
-
     # The updated tic-tac-toe board is displayed with the   tokens displayed on their assigned positions.
     p board
-    # At every turn the set of positions already taken is  compared to the sets of winning combinations.
-    if board[0] == board[1] && board[1] == board[2]
-      puts "The winner is #{player}"
-      i = 9
-    elsif board[3] == board[4] && board[4] == board[5]
-      puts "The winner is #{player}"
-      i = 9
-    elsif board[6] == board[7] && board[7] == board[8]
-      puts "The winner is #{player}"
-      i = 9
-    elsif board[0] == board[3] && board[3] == board[6]
-      puts "The winner is #{player}"
-      i = 9
-    elsif board[1] == board[4] && board[4] == board[7]
-      puts "The winner is #{player}"
-      i = 9
-    elsif board[2] == board[5] && board[5] == board[8]
-      puts "The winner is #{player}"
-      i = 9
-    elsif board[0] == board[4] && board[4] == board[8]
-      puts "The winner is #{player}"
-      i = 9
-    elsif board[2] == board[4] && board[4] == board[6]
-      puts "The winner is #{player}"
-      i = 9
-    # If all positions on the board are already taken a   draw is declared
-    elsif i == 8
-      puts "It\'s a tie!"
+
+    # Deciding the game outcome
+  game_on = true
+  winner = false
+  draw = false
+  # initial instructions for player
+
+  while game_on
+  puts 'Player_1 your turn. Choose a number between 1 and 9'
+  # loop for each move
+  movement = false
+  while movement == false
+    p_one = gets.chomp.to_i
+    if (1..9).include?(p_one)
+      movement = true
+      board
+    else
+      puts 'wrong input'
     end
-    i += 1
   end
+
+  game_on = false if winner || draw
+
+  # loop for each move
+  puts 'Player_2 your turn. Choose a number between 1 and 9'
+  movement = false
+  while movement == false
+    p_two = gets.chomp.to_i
+    if (1..9).include?(p_two)
+      movement = true
+      board
+      winner = player_one.to_s
+    else
+      puts 'wrong input'
+    end
+  end
+
+  game_on = false if winner || draw
+
+end
+
+# display the result after winning
+winning = 'winning cases'
+puts "The winner is #{winner}" if winning
+
+#  draww movement
+puts 'There is no winner, It is a DRAW' if draw 
 
   # Players are asked if they'd like to play another round or end the game. The game ends or re-starts accordingly.
   puts 'Do you wish to play another round? Y / N'

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # The tic-tac-toe board is displayed
 
 puts '+-----------+'
@@ -59,12 +57,12 @@ until no_further
       move = gets.chomp.to_i - 1
     end
     board[move] = token
-  
+
     # At every turn the set of positions already taken is  compared to the sets of winning combinations.
     if board[0] == board[1] && board[1] == board[2]
       puts "The winner is #{player}"
       i = 9
-      elsif i == 8
+    elsif i == 8
       puts "It\'s a tie!"
     end
     i += 1

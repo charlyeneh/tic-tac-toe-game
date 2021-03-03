@@ -68,7 +68,7 @@ until no_further
   game_on = false if winner || draw
 
   # loop for each move
-  puts 'Player_2 your turn. Choose a number between 1 and 9'
+  puts 'Player2 your turn. Choose a number between 1 and 9'
   movement = false
   while movement == false
     p_two = gets.chomp.to_i

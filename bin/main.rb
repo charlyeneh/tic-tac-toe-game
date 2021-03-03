@@ -99,3 +99,5 @@ if willing == 'N'
   no_further = true
   puts 'Game over!'
 end
+
+end

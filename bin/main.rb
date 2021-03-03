@@ -39,8 +39,9 @@ while i < 9
     (player = name_player2)
     token = token_player2
   end
-  puts "#{player} its your move. Enter the number of  the position where you wish to place your token."
-  move = gets.chomp.to_i - 1
+end
+puts "#{player} its your move. Enter the number of  the position where you wish to place your token."
+move = gets.chomp.to_i - 1
 
 # The updated tic-tac-toe board is displayed with the   tokens displayed on their assigned positions.
 p board
@@ -53,33 +54,35 @@ draw = false
 # initial instructions for player
 while game_on
   puts 'Player_1 your turn. Choose a number between 1 and 9'
-# loop for each move
-movement = false
-while movement == false
-  p_one = gets.chomp.to_i
-  if (1..9).include?(p_one)
-    movement = true
-    board
-  else
-    puts 'wrong input'
+  # loop for each move
+  movement = false
+  while movement == false
+    p_one = gets.chomp.to_i
+    if (1..9).include?(p_one)
+      movement = true
+      board
+    else
+      puts 'wrong input'
+    end
   end
-end
 
-game_on = false if winner || draw
-# loop for each move
-puts 'Player2 your turn. Choose a number between 1 and9'
-movement = false
-while movement == false
-  p_two = gets.chomp.to_i
-  if (1..9).include?(p_two)
-    movement = true
-    board
-    winner = player_one.to_s
-  else
-    puts 'wrong input'
-  end
-end
   game_on = false if winner || draw
+  # loop for each move
+  puts 'Player2 your turn. Choose a number between 1 and9'
+  movement = false
+  while movement == false
+    p_two = gets.chomp.to_i
+    if (1..9).include?(p_two)
+      movement = true
+      board
+      winner = player_one.to_s
+    else
+      puts 'wrong input'
+    end
+  end
+
+  game_on = false if winner || draw
+  
 end
 
 # display the result after winning

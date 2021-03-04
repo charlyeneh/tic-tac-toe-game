@@ -1,3 +1,5 @@
+# rubocop:disable Metrics/PerceivedComplexity,Metrics/CyclomaticComplexity
+
 class Board
   attr_reader :board
 
@@ -12,14 +14,14 @@ class Board
     puts '---------------------------'
     puts "  #{@board[6]}    |    #{@board[7]}    |    #{@board[8]}   "
   end
-  
+
   def update_board(location, token)
     @board[location] = token
   end
 
-   def position_taken?(location)
+  def position_taken?(location)
     if (@board[location] == 'X') || (@board[location] == 'O')
-    true
+      true
     else false
     end
   end
@@ -46,6 +48,7 @@ class Board
     elsif @board[2] == @board[4] && @board[4] == @board[6]
       true
     else false
+    end
   end
-
 end
+# rubocop:enable Metrics/PerceivedComplexity,Metrics/CyclomaticComplexity

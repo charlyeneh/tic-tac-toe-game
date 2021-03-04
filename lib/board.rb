@@ -16,4 +16,11 @@ class Board
   def update_board(location, token)
     @board[location] = token
   end
+
+   def position_taken?(location)
+    if (@board[location] == 'X') || (@board[location] == 'O')
+    true
+    else false
+    end
+  end
 end

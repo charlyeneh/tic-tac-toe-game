@@ -10,6 +10,7 @@ puts 'Player 2 enter your name'
 name_player2 = gets.chomp.upcase
 puts "#{name_player1}, choose your token: either O or X"
 token_player1 = gets.strip.upcase
+
 until %w[X O].include?(token_player1)
   puts 'That is not a valid token. Choose either O or X'
   token_player1 = gets.strip.upcase

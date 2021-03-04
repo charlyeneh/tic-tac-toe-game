@@ -23,4 +23,29 @@ class Board
     else false
     end
   end
+
+  def draw?
+    @board.all?(String)
+  end
+
+  def win_check?
+    if @board[0] == @board[1] && @board[1] == @board[2]
+      true
+    elsif @board[3] == @board[4] && @board[4] == @board[5]
+      true
+    elsif @board[6] == @board[7] && @board[7] == @board[8]
+      true
+    elsif @board[0] == @board[3] && @board[3] == @board[6]
+      true
+    elsif @board[1] == @board[4] && @board[4] == @board[7]
+      true
+    elsif @board[2] == @board[5] && @board[5] == @board[8]
+      true
+    elsif @board[0] == @board[4] && @board[4] == @board[8]
+      true
+    elsif @board[2] == @board[4] && @board[4] == @board[6]
+      true
+    else false
+  end
+
 end

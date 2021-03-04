@@ -1,11 +1,8 @@
-class Player
-  attr_reader :name, :token
-  def initialize(name, token)
-    @name = name
-    @token = token
-  end
-end
+require_relative '../lib/board'
+require_relative '../lib/player'
 
+board = Board.new
+puts board.display
 
 puts 'Welcome to TIC-TAC-TOE!'
 puts 'Player 1 enter your name.'
@@ -24,8 +21,8 @@ until %w[X O].include?(token_player1)
 end
 token_player2 = token_player1 == 'X' ? 'O' : 'X'
 
-player1 = Player.new(name_player1, token_player1)
-player2 = Player.new(name_player2, token_player2)
+player1 = Player.new(name_player1, token_player1, board)
+player2 = Player.new(name_player2, token_player2, board)
 
 puts "#{player1.name} your token is: #{player1.token}. #{player2.name} your token is: #{player2.token}"
 
@@ -42,4 +39,6 @@ while i < 9
     puts 'That position is not on the board. Valid selections are between numbers 1 to 9!'
     location = gets.chomp.to_i - 1
   end
+  up_next.turn(location)
+  puts board.display
 end

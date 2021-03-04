@@ -39,12 +39,19 @@ while i < 9
     puts 'That position is not on the board. Valid selections are between numbers 1 to 9!'
     location = gets.chomp.to_i - 1
   end
-
   while board.position_taken?(location)
     puts 'That position is already occupied. Select from among the empty positions.'
     location = gets.chomp.to_i - 1
   end
-  
   up_next.turn(location)
   puts board.display
+  if board.win_check?
+    puts "#{up_next.name} wins this round"
+    i = 9
+  end
+  if board.draw?
+    puts 'Game is over and there is no winner!'
+  end
+  i += 1
+  end
 end

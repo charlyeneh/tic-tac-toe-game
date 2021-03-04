@@ -27,4 +27,19 @@ token_player2 = token_player1 == 'X' ? 'O' : 'X'
 player1 = Player.new(name_player1, token_player1)
 player2 = Player.new(name_player2, token_player2)
 
+puts "#{player1.name} your token is: #{player1.token}. #{player2.name} your token is: #{player2.token}"
 
+i = 0
+while i < 9
+  if i.even?
+    up_next = player1
+  elsif i.odd?
+    up_next = player2
+  end
+  puts "#{up_next.name} its your move. Enter the number of the position where you wish to place your token."
+  location = gets.chomp.to_i - 1
+  while location < 0 || location > 8
+    puts 'That position is not on the board. Valid selections are between numbers 1 to 9!'
+    location = gets.chomp.to_i - 1
+  end
+end

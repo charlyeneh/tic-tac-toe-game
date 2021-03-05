@@ -27,11 +27,11 @@ until %w[X O].include?(token_player1)
   puts
   token_player1 = gets.strip.upcase
   puts
-  if token_player1 != 'X' && token_player1 != 'O'
-    puts "Ok #{name_player1}, you get assigned X"
-    puts
-    token_player1 = 'X'
-  end
+  next unless token_player1 != 'X' && token_player1 != 'O'
+
+  puts "Ok #{name_player1}, you get assigned X"
+  puts
+  token_player1 = 'X'
 end
 token_player2 = token_player1 == 'X' ? 'O' : 'X'
 player1 = Player.new(name_player1, token_player1, board)

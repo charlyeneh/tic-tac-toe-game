@@ -15,3 +15,10 @@ describe Board do
     end
   end
 end
+
+describe '#update_board' do
+    it 'updates chosen position to player assigned token' do
+      board = Board.new
+      expect(board.update_board(4, 'X')).to eql('X')
+    end
+  end

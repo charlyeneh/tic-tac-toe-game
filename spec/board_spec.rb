@@ -37,3 +37,21 @@ describe '#position_taken?' do
     expect(board.position_taken?(3)).to be(false)
   end
 end
+
+describe '#draw?' do
+    it 'returns true if all elements in board are a string' do
+      board = Board.new
+      player = Player.new('German', 'O', board)
+
+      9.times { |index| player.turn(index + 1) }
+      expect(board.draw?).to be(true)
+    end
+
+    it 'returns false if not all elements in board are a string' do
+      board = Board.new
+      player = Player.new('German', 'O', board)
+
+      8.times { |index| player.turn(index + 1) }
+      expect(board.draw?).to be(false)
+    end
+  end

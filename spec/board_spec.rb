@@ -21,4 +21,19 @@ describe '#update_board' do
       board = Board.new
       expect(board.update_board(4, 'X')).to eql('X')
     end
+end
+
+describe '#position_taken?' do
+  it 'returns true if position is already taken' do
+    board = Board.new
+    player = Player.new('German', 'X', board)
+    player.turn(6)
+    expect(board.position_taken?(6)).to be(true)
   end
+  it 'returns false if position is not taken' do
+    board = Board.new
+    player = Player.new('Julius', 'O', board)
+    player.turn(7)
+    expect(board.position_taken?(3)).to be(false)
+  end
+end

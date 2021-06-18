@@ -79,8 +79,8 @@ This project is tested with RSpec which is a computer domain-specific language (
 
 👤 **German Cobian**
 
-* GitHub: [@German Cobian](https://github.com/German-Cobian)
-* Twitter: [@German Cobian](https://twitter.com/GermanCobian3)
+* GitHub: [@German-Cobian](https://github.com/German-Cobian)
+* Twitter: [@GermanCobian1](https://twitter.com/GermanCobian1)
 * LinkedIn: [@german-cobian](https://www.linkedin.com/in/german-cobian/)
 
 

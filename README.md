@@ -15,7 +15,7 @@ Game Rules
 * If it's valid it will display the board with the chosen position replaced by the symbol of the player [X, O].
 * Then it will ask the next player to take turn.
 * It will repeate the same for the second player.
-* The game contiues till it reaches either a winning or a draw condition.
+* The game continues till it reaches either winning or draw conditions.
 
 Winning conditions
 We have 8 winning conditions...
@@ -76,12 +76,16 @@ This project is tested with RSpec which is a computer domain-specific language (
 * Linkedin: [Mih Julius](https://www.linkedin.com/in/mih-julius)
 * Twiter: [@mihndim](https://twitter.com/mihndim)
 
-
 👤 **German Cobian**
 
 * GitHub: [@German-Cobian](https://github.com/German-Cobian)
-* Twitter: [@GermanCobian1](https://twitter.com/GermanCobian1)
-* LinkedIn: [@german-cobian](https://www.linkedin.com/in/german-cobian/)
+* Twitter: [@German-Cobian1](https://twitter.com/GermanCobian1)
+* LinkedIn: [@german-cobian](https://linkedin.com/german-cobian)
+
+👤 **Charles Chukwunweike Eneh*
+* GitHub: [@charlyeneh](https://github.com/charlyeneh)
+* Twitter: [@twitterhandle](https://twitter.com/ProgrammerBaby?s=09)
+* LinkedIn: [LinkedIn](https://www.linkedin.com/in/charles-chukwunweike-eneh-5345a2147)
 
 
 ## 🤝 Contributing
@@ -101,4 +105,4 @@ Guidelines for this project provided by [The Odin Project](https://www.theodinpr
 
 ## 📝 License
 
-This project is [MIT](https://github.com/German-Cobian/New-York-Times-Page-Clone/blob/main/LICENSE) licensed
+This project is [MIT](https://github.com/German-Cobian/New-York-Times-Page-Clone/blob/main/LICENSE) licensed.
